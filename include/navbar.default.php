@@ -21,9 +21,9 @@
 
         <div class="collapse navbar-collapse navbar-right" id="bs-WAPOSAT-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="index.php#AcercaDe">Filosofia</a></li>
                 <li><a href="#contact">Cont&aacute;ctanos</a></li>
                 <li><a href="http://estaciones.waposat.com">Estaciones</a></li>
+                <li><a href="logout.php">Salir</a></li>
             </ul>
         </div>
     </div>
