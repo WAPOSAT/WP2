@@ -13,11 +13,11 @@ body {
 }
 
 body {
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Source Sans Pro","Helvetica Neue","Helvetica","Arial","sans-serif";
 }
 
 /* Footer */
 
 footer {
-    padding: 100px 0;
+    padding: 10px 0;
 }

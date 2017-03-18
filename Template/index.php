@@ -1,103 +1,41 @@
-<?php 
-session_start();
-$id_persona = $_SESSION["id_persona"];
-if($id_persona) {
-    
-/* ....................................................................... */
-?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
+  <head>
+    <title>Monitoreo</title>
 
-<head>
-    <title>WAPOSAT</title>
-    
-    <?php  include_once("../include/head.default.php");?>
-    
-    <!-- Especific CSS -->
-    <link href="monitoreo/style.monitoreo.css" rel="stylesheet">
-    
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    
-    <!-- Especific JS -->
-    <?php  //include_once("monitoreo/maps.scriptJS.php"); ?>
-    <script src="../js/Chart.js"></script>
-    <script src="DemostrationLAN/DemostrationLAN.js"></script>
-    <!-- <script src="monitoreo/GenericChart.js"></script> -->
-    <script src="monitoreo/CuadroMonitoreo.js"></script>
-    <script>
-        window.onload = function(){
-           CargarCuadroGraficas ();
-        }
-    </script>
-    
-</head>
+    <!-- Including general head -->
+    <?php  include_once("../include/head.general.php");?>
 
-<body>
-    
-    <!-- Navigation -->
-    <?php include_once("../include/navbar.default.php"); ?>
-    
-    <!-- Body -->
-    <div class="tab-content">
-        <!-- Container -->
-        <div id="container" class="col-xs-12 col-md-12">
-            <div id="information"  >
-                
-            </div> <!-- information -->
-        </div> <!-- /Container -->
-    </div> <!-- /Body -->
-    
-    <!-- Footer -->
-    <?php include_once("../include/footer.default.php"); ?>
-    
-    
-</body>
-    
-</html> 
+    <!--Estilos-->
+    <link rel="stylesheet" type="text/css" href="index/style.index.css">
+          
+  </head>
+  <body >
+    <div id="o-wrapper" class="o-wrapper">
+            <div class=Login>
+                <img src="../img/waposat-logo.png">
+                <form id="formulario" action="{{ path('login') }}" method="post">
+                <div class="BoxLogin" ><i class="fa fa-user" aria-hidden="true"></i><input id="username" name="_username"  type="text" placeholder="Usuario"></div>
+                <div class="BoxLogin" ><i class="fa fa-lock " aria-hidden="true"></i><input id="password" type="password" name="_password" placeholder="Contraseña"></div>
+                <div class=Recordar>
+                     <label><input type="radio" name="_target_path" value="alert" checked=""> Alertas</label>
+                     <label><input type="radio" name="_target_path" value="scada"> Scada</label><br>
+                <!--
+                    <label><input type=checkbox value=1 name=recordar> Recordar Contraseña</label>
+                -->
+                </div>
 
-<?php 
-/* ...................................................................... */	
+                <input  type="submit" class=ButtonEnter onclick=Login() value="Ingresar">
 
-} else {
+                </form>
+            </div>
+            <div class=LoginInfo>Olvide mi contraseña &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Necesito una cuenta
+                <div class=Respuesta id="respuesta">
+                    
+                </div>
+            </div>
+        </div>
+     
 
-?>
-    
-<html>
-	<head>
-	<title>WAPOSAT</title>
-    
-    <?php include_once("../include/head.default.php"); ?>    
-    
-    <!-- Especific   -->
-	<link href="index/index.css" type="text/css" rel="stylesheet" >
-	<script type="text/javascript" language="javascript" src="index/index.js" ></script>
-    <script src="../js/sb-admin-2.js"></script>
-    <script type="text/javascript" language="javascript" src="../js/metisMenu.min.js" ></script>    
-        
-    <link href="../css/sb-admin-2.css" rel="stylesheet">
-    <link href="../css/metisMenu.min.css" type="text/css" rel="stylesheet" >
-        
-	</head>
-	<body>
-		
-        <div class="container">
-            <div class="card card-container">
-                <img id="profile-img" class="profile-img-card " src="../img/logos/gota-waposat.png" />
-                <p id="profile-name" class="profile-name-card"></p>
-                <form class="form-signin" action="logueo.php" name="form" method="post" >
-                    <span id="reauth-email" class="reauth-email"></span>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Correo electr&oacute;nico" name="usuario" required autofocus>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Contrase&ntilde;a" name="clave" required >
-                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
-                </form><!-- /form -->
-            </div><!-- /card-container -->
-        </div><!-- /container -->
-        
-	</body>
+  </body>
 </html>
-
-<?php   
-}
-
-?>
