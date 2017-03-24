@@ -74,6 +74,23 @@ function create_framestations() {
 	  $("#screen-2").html(s2_content);
 	  $("#screen-3").html(s3_content);
 
+	  
+
+
+
+
+
+
+
+
+
+	  // Punto de modificacion Juan
+
+	  
+
+
+
+
 
 	    
 	});
