@@ -14,7 +14,9 @@ $Block = $Blocks->getstation_byId($id);
 
 // verificamos que el Id enviado pertenesca a un Block_Station que este activo
 if($Block != 0){
-	/* Hasta este punto se ha verificado si la informacion enviada por GET es correcta 
+	$Sensores = array();
+	/*
+	Hasta este punto se ha verificado si la informacion enviada por GET es correcta
 	*/
 
 	$name = $Block["block_name"];
@@ -31,6 +33,13 @@ if($Block != 0){
 	$imagen = $Block["image"];
 	$Freq_Refresh = $Block["refresh"];
 
+	//getSensors_visible
+	$Block_Sensors->getSensors_visible ($id);
+
+    while($valores = $Block_Sensors->retornar_SELECT()){
+    	array_push($Sensores, (float)$valores["id"]);
+    }
+
 
 	$arr = array(
 		'Id'=> $id,
@@ -39,6 +48,7 @@ if($Block != 0){
 		'descripcion' => $descripcion,
 		'RefreshFrequencySeg' => $Freq_Refresh,
 		'imagen' => $imagen,
+		'sensores' => $Sensores,
 		'Map' => [
 			'Option' =>[
 				'zoom'=> $map_zoom,

@@ -35,8 +35,6 @@ if($Block != 0){
 
     $ValParameters = $Parameters->getParameter_bySensor ($Block["id_sensor"]);
 
-    $Measurement->get_last24hours ($Block["id_sensor"]);
-
     $months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 
     $LimSup = (float)$Block["up_danger_limit"];
@@ -47,59 +45,7 @@ if($Block != 0){
     $firstVal = 0;
     $lastVal = 0;
     $AcumVal = 0;
-    /*
-    while($valores = $Measurement->retornar_SELECT()){
-        if ($long == 0){
-            $valMax = (float)$valores["value"];
-            $valMin = (float)$valores["value"];
-        }
-        if ($valMax < (float)$valores["value"]){
-            $valMax = (float)$valores["value"];
-        }
-        if ($valMin > (float)$valores["value"]){
-            $valMin = (float)$valores["value"];
-        }
-        $firstVal = (float)$valores["value"];
-
-        $datetmp = $valores["date"];
-        
-        $AcumVal = $AcumVal+$valores["value"];
-        if($lastID < $valores["id_measurement"]){
-            $lastID = (float)$valores["id_measurement"];
-            $lastVal = (float)$valores["value"];
-            $lastVal = round($lastVal,$decimal);
-            $lastdate = $valores["date"];
-        }
-        $long++;
-    }
-    */
-    //Trabajando con la ultima fecha
-    /*
-    $date = strtotime($lastdate);
-    $mesText = $months[date('n', $date)-1];
-    $dia = date('d', $date);
-    $hora = date('H', $date);
-    $minuto = date('i',$date);
-    $segundo = date('s',$date);
-    $fechaText = "".$mesText."-".$dia." ".$hora.":".$minuto.":".$segundo;
-
-
-    $info_parameter = utf8_encode($ValParameters["referencia"]);
-    //$info_parameter = utf8_encode("hola<div>hola 2</div>");
-
-    $valMedio = $AcumVal/$long;
-    $valMedio = round($valMedio,$decimal);
-
-    if($valMedio > $lastVal && $Block["better_up"] == 0) {
-        $message_advice = "Hemos detectado que la ultima medicion es menor que la media, por lo que le recomendamos utilizar el agua en este momento pues se requiere menos insumos para su preparación";
-    } else if ($valMedio < $lastVal && $Block["better_up"] == 0) {
-        $message_advice = "Hemos detectado que este no es buen momento de usar agua para su proceso, la calidad no es la mejor de acuerdo a las ultimas 24 horas";
-    }else {
-        $message_advice = "Su agua esta en los valores medios, su utilizacion no tendra mayor repercucion en su proceso";
-    }
-    */
     $long =0;
-
 
     $Measurement->get_sinceId ($Block["id_sensor"], $last);
 
@@ -124,7 +70,6 @@ if($Block != 0){
         $long++;
     }
 
-
     //Trabajando con la ultima fecha
     
     $date = strtotime($lastdate);
@@ -138,7 +83,6 @@ if($Block != 0){
     $DataTime = array_reverse($DataTime);
     $DataValue = array_reverse($DataValue);
     $Data = array_reverse($Data);
-
 
     $arr = array(
         'IdBlockSensor'=> $id,
@@ -160,6 +104,5 @@ if($Block != 0){
     );
 
     echo json_encode($arr);
-    
 }
 ?>
