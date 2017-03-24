@@ -2,12 +2,12 @@
 	font-size: 5em;
 }
 
-#last-sensor-value-1{
-	font-size: 9em;
+.last-sensor-value-1{
+	font-size: 6em;
 	font-weight: bold; 
 }
 
-#last-measure-date{
+.last-measure-date{
 	font-size: 2em;
 	color: #1D648E;
 }
@@ -28,8 +28,8 @@
 	color: #ABD099;	
 }
 @media (max-width: 830px) {
-  #last-sensor-value-1 {
-    font-size: 6em;
+  .last-sensor-value-1 {
+    font-size: 4em;
   }
   .parameter-info{
 		font-size: 3em;
