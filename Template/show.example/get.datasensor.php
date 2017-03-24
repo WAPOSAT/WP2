@@ -107,12 +107,25 @@ if($valMedio > $lastVal && $Block["better_up"] == 0) {
     $message_advice = "Su agua esta en los valores medios, su utilizacion no tendra mayor repercucion en su proceso";
 }
 
+/*
+IBM
+-12.071199, -76.952113
+*/
+/*
+CITRAR UNI
+
 $map_zoom  = 16;
 $map_LatCenter = -12.01109;
 $map_LngCenter = -77.050624;
+*/
 
-$LatPoint = -12.01109;
-$LngPoint = -77.050624;
+$map_zoom  = 16;
+$map_LatCenter = -12.071199;
+$map_LngCenter = -76.952113;
+
+
+$LatPoint = -12.071199;
+$LngPoint = -76.952113;
 
 
 

@@ -276,7 +276,7 @@ function print_datasensor() {
 
 
     lastId = data.Last.Id;
-    clearInterval(actualizarSensor);
+    clearInterval(actualizarProceso);
     actualizarProceso=setInterval('DataSensorUpdate('+data.IdBlockSensor+')', (data.RefreshFrequencySeg*1000));
 
   });

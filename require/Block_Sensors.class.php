@@ -17,7 +17,12 @@ class Block_Sensors {
     public function getblock_Sensor ($id_block, $id_sensor){
         $sql = "SELECT * FROM block_sensors WHERE active=1 AND id_block=".$id_block." AND id_sensor=".$id_sensor." ";
         $this->_conexion->ejecutar_sentencia($sql);
-    }    
+    }
+
+    public function getSensors_visible ($id_block){
+        $sql = "SELECT * FROM block_sensors WHERE active=1 AND visible=1 AND id_block=".$id_block." ";
+        $this->_conexion->ejecutar_sentencia($sql);
+    }
 
     public function retornar_SELECT(){
 		return $this->_conexion->retornar_array();
