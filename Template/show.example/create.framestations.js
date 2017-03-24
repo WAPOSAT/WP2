@@ -35,46 +35,44 @@ function create_framestations() {
 	  	}
 
 	  	// Generamos el contenido de la vista 1
-      s1_content+="<div id='screen-1-"+k+"' class='col-md-"+col+"'>\n\
+      s1_content+="<div id='screen-1-"+v+"' class='col-md-"+col+"'>\n\
       	<div class='col-md-12 text-center parameter-info'>\n\
-      	<strong id='parameter-name-1-"+k+"' ></strong>hola"+k+" <button id='parameter-state-1-"+k+"' type='button' class='btn btn-success'>NORMAL</button>\n\
+      	<strong id='parameter-name-1-"+v+"' ></strong>hola"+v+" <button id='parameter-state-1-"+v+"' type='button' class='btn btn-success'>NORMAL</button>\n\
         </div>\n\
-        <div id='last-sensor-value-1-"+k+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
+        <div id='last-sensor-value-1-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
         </div>\n\
-        <div id='last-measure-date-"+k+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
+        <div id='last-measure-date-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
         </div>";
         
       // Generamos el contenedor de la vista 2
-      s2_content+="<div id='screen-2' class='col-md-"+col+"' >\n\
-				<div class='col-md-12 text-center parameter-info'>\n\
-        <div id='last-sensor-value-2' class='col-md-12 text-center'>\n\
-        </div></div>\n\
-        <div class='col-md-12 text-center' >\n\
-        <div class='col-md-offset-2 col-xs-12'>\n\
-        <div id='container-"+k+"' class='col-md-8' style='height: 300px' ></div>\n\
-        </div>\n\
-        </div>\n\
+      s2_content+="<div id='screen-2-"+v+"' class='col-md-"+col+"' >\n\
+					<div class='col-md-12 text-center parameter-info'>\n\
+		        <div id='last-sensor-value-2-"+v+"' class='col-md-12 text-center'>\n\
+		        hola"+v+"\n\
+		        </div>\n\
+		      </div>\n\
+		      <div class='col-md-12 text-center' >\n\
+		        <div class='col-md-offset-2 col-xs-12'>\n\
+		        	<div id='container-"+v+"' class='col-md-8' style='height: 300px' >Hola</div>\n\
+		        </div>\n\
+	        </div>\n\
         </div>";      
-        
+
       // Generamos el contenedor de la vista 3
-      s3_content+="<div id='screen-3' class='col-md-12'>\n\
-        <div class='col-md-12 text-center parameter-info'>\n\
-        <strong id='parameter-name-3-"+k+"' ></strong>=<strong id='last-sensor-value-3-"+k+"' ></strong> <button id='parameter-state-3-"+k+"' type='button' class='btn btn-success'></button>\n\
-        </div>\n\
-        <div id='parameter-teory-"+k+"' class='col-md-10 col-md-offset-1 col-xs-12'>\n\
-        Hola mundo\n\
-        </div>\n\
+      s3_content+="<div id='screen-3-"+v+"' class='col-md-"+col+"'>\n\
+	        <div class='col-md-12 text-center parameter-info'>\n\
+	        	<strong id='parameter-name-3-"+v+"' ></strong>=<strong id='last-sensor-value-3-"+v+"' ></strong> <button id='parameter-state-3-"+v+"' type='button' class='btn btn-success'></button>\n\
+	        </div>\n\
+	        <div id='parameter-teory-"+v+"' class='col-md-10 col-md-offset-1 col-xs-12'>\n\
+	        	Hola mundo\n\
+	        </div>\n\
         </div>";
-
-
 
     });
 
 	  $("#screen-1").html(s1_content);
-	  $("#screen-2").html(s1_content);
-	  $("#screen-3").html(s1_content);
-
-
+	  $("#screen-2").html(s2_content);
+	  $("#screen-3").html(s3_content);
 
 
 	    
