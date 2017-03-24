@@ -32,7 +32,25 @@ if($Block != 0){
 	$Freq_Refresh = $Block["refresh"];
 
 
-	$arr = array('Id'=> $id, 'name' => $name , 'code_name'=>$code_name , 'descripcion' => $descripcion, 'RefreshFrequencySeg' => $Freq_Refresh, 'imagen' => $imagen,  'Map' => [ 'Option' =>['zoom'=> $map_zoom, 'LatCenter'=> $map_LatCenter, 'LngCenter'=> $map_LngCenter ], 'Marker' => ['Lat'=> $LatPoint , 'Lng'=> $LngPoint ] ] );
+	$arr = array(
+		'Id'=> $id,
+		'name' => $name ,
+		'code_name'=>$code_name,
+		'descripcion' => $descripcion,
+		'RefreshFrequencySeg' => $Freq_Refresh,
+		'imagen' => $imagen,
+		'Map' => [
+			'Option' =>[
+				'zoom'=> $map_zoom,
+				'LatCenter'=> $map_LatCenter,
+				'LngCenter'=> $map_LngCenter
+				], 
+			'Marker' => [
+				'Lat'=> $LatPoint,
+				'Lng'=> $LngPoint
+				] 
+			]
+		);
 
 	echo json_encode($arr);
 

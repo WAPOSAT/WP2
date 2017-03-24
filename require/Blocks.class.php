@@ -16,7 +16,6 @@ class Blocks {
 
     public function verify_station($id){
         $sql = "SELECT * FROM blocks WHERE active=1 AND id_block_type=3 AND id=".$id." LIMIT 1 ";
-        echo $sql;
         $this->_conexion->ejecutar_sentencia($sql);
         return $this->_conexion->tam_respuesta();
     }
