@@ -48,7 +48,7 @@ function create_framestations() {
 	  	// Generamos el contenido de la vista 1
       s1_content+="<div id='screen-1-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
       	<div class='col-md-12 text-center parameter-info-"+x+"'>\n\
-      	<strong id='parameter-name-1-"+v+"' ></strong>hola"+v+" <button id='parameter-state-1-"+v+"' type='button' class='btn btn-success'>NORMAL</button>\n\
+      	<strong id='parameter-name-1-"+v+"' ></strong><button id='parameter-state-1-"+v+"' type='button' class='btn btn-success'></button>\n\
         </div>\n\
         <div id='last-sensor-value-1-"+x+"-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
         </div>\n\
@@ -90,5 +90,15 @@ function create_framestations() {
     
 	});
 
-}
 
+  // Punto de modificacion Juan
+
+	  
+
+	  print_datasensors();
+
+
+
+
+	});
+}
