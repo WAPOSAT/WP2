@@ -85,13 +85,13 @@ function create_framestations() {
 
 
 	  // Punto de modificacion Juan
-
+	  
 	  
 
-
-
-
-
-	    
+	  
+	  
+	  
+	  
+	  
 	});
 }
