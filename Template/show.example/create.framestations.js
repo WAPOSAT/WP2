@@ -37,22 +37,15 @@ function create_framestations() {
 	  		var col=numDown;
 	  	}
 
-		var x;
-	  	
-	  	if (v==1){x=1;
-	  	}else if (v==2){x=2;
-		}else if (v==4){x=3;
-	  	}else if (v==6){x=4;}
-
 
 	  	// Generamos el contenido de la vista 1
       s1_content+="<div id='screen-1-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
-      	<div class='col-md-12 text-center parameter-info-"+x+"'>\n\
+      	<div class='col-md-12 text-center parameter-info'>\n\
       	<strong id='parameter-name-1-"+v+"' ></strong><button id='parameter-state-1-"+v+"' type='button' class='btn btn-success'></button>\n\
         </div>\n\
-        <div id='last-sensor-value-1-"+x+"-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
+        <div id='last-sensor-value-1-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
         </div>\n\
-        <div id='last-measure-date-"+x+"-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
+        <div id='last-measure-date-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
         <div class='col-md-offset-2 col-xs-12'>\n\
 		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' ></div>\n\
 		        </div>\n\
@@ -82,6 +75,51 @@ function create_framestations() {
 		        </div>\n\
         </div>";
 
+/*-------------------------------------------*/
+/*  // Analisando la informacion obtenida
+   var state="parameter-info last-sensor-value-1 last-measure-date";
+ 
+    if(v==2){
+      state1="parameter-info last-sensor-value-1 last-measure-date";
+   
+    }else if(v==3 && v==4){
+      state2="btn btn-danger btn-lg";
+     
+    }else if(v==5 && v==6){
+      state3="btn btn-danger btn-lg";
+     
+    }
+
+    // Cambiando la informacion general
+
+      $("#parameter-name-1-"+v).removeClass();
+      $("#parameter-name-1-"+v).addClass(state1);
+
+ 	  $("#parameter-name-1-"+v).removeClass();
+      $("#parameter-name-1-"+v).addClass(state2);
+
+      $("#parameter-name-1-"+v).removeClass();
+      $("#parameter-name-1-"+v).addClass(state3);
+
+/*.parameter-info{
+  
+	font-size: 3em;
+}
+
+.last-sensor-value-1{
+
+	font-size: 3.8em;
+	font-weight: bold; 
+}
+
+.last-measure-date{
+	font-size: 1em;
+	color: #1D648E;
+}*/
+
+/*
+/*----------------------------------------------*/
+
     });
 
 	  $("#screen-1").html(s1_content);
@@ -93,8 +131,8 @@ function create_framestations() {
 	});
 	  // Punto de modificacion Juan
  
+  
 
-	 
 
 	
 }
