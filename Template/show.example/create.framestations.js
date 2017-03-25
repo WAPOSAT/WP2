@@ -28,24 +28,38 @@ function create_framestations() {
 	  }
 
 	  $.each(Station.sensores, function(k, v) {
+
+		
+
 	  	if (k<=4){
 	  		var col=numUp;
 	  	}	else {
 	  		var col=numDown;
 	  	}
 
+		var x;
+	  	
+	  	if (v==1){x=1;
+	  	}else if (v==2){x=2;
+		}else if (v==4){x=3;
+	  	}else if (v==6){x=4;}
+
+
 	  	// Generamos el contenido de la vista 1
-      s1_content+="<div id='screen-1-"+v+"' class='col-md-"+col+"'>\n\
-      	<div class='col-md-12 text-center parameter-info'>\n\
+      s1_content+="<div id='screen-1-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
+      	<div class='col-md-12 text-center parameter-info-"+x+"'>\n\
       	<strong id='parameter-name-1-"+v+"' ></strong>hola"+v+" <button id='parameter-state-1-"+v+"' type='button' class='btn btn-success'>NORMAL</button>\n\
         </div>\n\
-        <div id='last-sensor-value-1-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
+        <div id='last-sensor-value-1-"+x+"-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
         </div>\n\
-        <div id='last-measure-date-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
+        <div id='last-measure-date-"+x+"-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
+        <div class='col-md-offset-2 col-xs-12'>\n\
+		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' ></div>\n\
+		        </div>\n\
         </div>";
         
       // Generamos el contenedor de la vista 2
-      s2_content+="<div id='screen-2-"+v+"' class='col-md-"+col+"' >\n\
+      s2_content+="<div id='screen-2-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
 					<div class='col-md-12 text-center parameter-info'>\n\
 		        <div id='last-sensor-value-2-"+v+"' class='col-md-12 text-center'>\n\
 		        hola"+v+"\n\
@@ -53,19 +67,19 @@ function create_framestations() {
 		      </div>\n\
 		      <div class='col-md-12 text-center' >\n\
 		        <div class='col-md-offset-2 col-xs-12'>\n\
-		        	<div id='container-"+v+"' class='col-md-8' style='height: 300px' >Hola</div>\n\
+		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' >Hola</div>\n\
 		        </div>\n\
 	        </div>\n\
         </div>";      
 
       // Generamos el contenedor de la vista 3
-      s3_content+="<div id='screen-3-"+v+"' class='col-md-"+col+"'>\n\
+      s3_content+="<div id='screen-3-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
 	        <div class='col-md-12 text-center parameter-info'>\n\
 	        	<strong id='parameter-name-3-"+v+"' ></strong>=<strong id='last-sensor-value-3-"+v+"' ></strong> <button id='parameter-state-3-"+v+"' type='button' class='btn btn-success'></button>\n\
 	        </div>\n\
-	        <div id='parameter-teory-"+v+"' class='col-md-10 col-md-offset-1 col-xs-12'>\n\
-	        	Hola mundo\n\
-	        </div>\n\
+	       <div class='col-md-offset-2 col-xs-12'>\n\
+		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' >Hola</div>\n\
+		        </div>\n\
         </div>";
 
     });
@@ -73,8 +87,8 @@ function create_framestations() {
 	  $("#screen-1").html(s1_content);
 	  $("#screen-2").html(s2_content);
 	  $("#screen-3").html(s3_content);
-
-
-	    
+    
 	});
+
 }
+

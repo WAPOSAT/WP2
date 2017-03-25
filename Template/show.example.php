@@ -28,7 +28,7 @@
   </div>
 
   <!--   -->
-  <div id="myCarousel" class="col-md-12 carousel slide" >   <!-- data-ride="carousel"  -->
+  <div id="myCarousel" class="col-md-5 carousel slide" >   <!-- data-ride="carousel"  -->
     <ol class="carousel-indicators" >
       <li data-target="#myCarousel" style="background-color: #4DB4DE" data-slide-to="0" ></li>
       <li data-target="#myCarousel" style="background-color: #1D648E" data-slide-to="1" ></li>
@@ -40,7 +40,7 @@
 
     <!--  Primera Vista -->
       <div class="item active ">
-        <div id="screen-1" class="col-md-12" style="height: 400px; min-width: 310px">
+        <div id="screen-1" class="col-md-12" style="height: 340px; min-width: 310px">
           
         </div>
         <div  class="col-md-12" style="height: 50px; min-width: 310px"></div>
@@ -49,7 +49,7 @@
 
       <!--  Segunda Vista -->
       <div class="item">
-        <div id="screen-2" class="col-md-12" style="height: 400px; min-width: 310px">
+        <div id="screen-2" class="col-md-12" style="height: 340px; min-width: 310px">
           
         </div>
         <div class="col-md-12" style="height: 50px; min-width: 310px"></div>
@@ -58,7 +58,7 @@
 
       <!--  Tercera Vista -->
       <div class="item">
-        <div id="screen-3" class="col-md-12" style="height: 400px; min-width: 310px">
+        <div id="screen-3" class="col-md-12" style="height: 340px; min-width: 310px">
           
         </div>
         <div class="col-md-12" style="height: 50px; min-width: 310px"></div>
@@ -67,7 +67,7 @@
 
       <!--  Quinta Vista -->
       <div class="item">
-        <div id="screen-5" class="col-md-12" style="height: 400px; min-width: 310px">          
+        <div id="screen-5" class="col-md-12" style="height: 340px; min-width: 310px">          
           <div id="map-slide" class="col-md-12" style="height: 400px " >
             
           </div>
@@ -108,7 +108,8 @@
 
   </script>
   <script type="text/javascript" src="show.example/create.framestations.js"></script>
-  <script type="text/javascript" src="index/maps.singleMark.js"></script>
+  <script type="text/javascript" src="index/maps.singleMark.js">
+  </script>
   <script type="text/javascript" src="index/print.datasensor.update.js"></script>
   <script type="text/javascript" src="index/print.datasensor.js"></script>
 

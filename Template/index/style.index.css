@@ -1,14 +1,16 @@
 .parameter-info{
-	font-size: 5em;
+  
+	font-size: 3em;
 }
 
 .last-sensor-value-1{
-	font-size: 6em;
+
+	font-size: 3.8em;
 	font-weight: bold; 
 }
 
 .last-measure-date{
-	font-size: 2em;
+	font-size: 1.5em;
 	color: #1D648E;
 }
 
@@ -28,17 +30,66 @@
 	color: #ABD099;	
 }
 @media (max-width: 830px) {
-  .last-sensor-value-1 {
+
+  /*--1--*/
+  .last-sensor-value-1-1 {
     font-size: 4em;
   }
-  .parameter-info{
+  .parameter-info-1{
 		font-size: 3em;
   }
-  #last-measure-date{
+  #last-measure-date-1{
 		font-size: 1em;
 		font-weight: bold; 
 	}
+
+  /*--2--*/
+  .last-sensor-value-1-2 {
+    font-size: 4em;
+  }
+  .parameter-info-2{
+    font-size: 3em;
+  }
+  #last-measure-date-2{
+    font-size: 1em;
+    font-weight: bold; 
+  }
+
+  /*--3--*/
+  .last-sensor-value-1-3{
+    font-size: 4em;
+  }
+  .parameter-info-3{
+    font-size: 3em;
+  }
+  #last-measure-date-3{
+    font-size: 1em;
+    font-weight: bold; 
+  }
+
+  /*--4--*/
+  .last-sensor-value-1-4{
+    font-size: 4em;
+  }
+  .parameter-info-4{
+    font-size: 3em;
+  }
+  #last-measure-date-4{
+    font-size: 1em;
+    font-weight: bold; 
+  }
+
+
+
+
+
+
+
+
+
+
 	#container2{
+
 		height: 150px;
 	}
 	#body-4{
@@ -122,3 +173,6 @@ border: solid 1px #dddddd;
 .o-wrapper {
     -webkit-transition: -webkit-transform .3s
 }
+
+
+
