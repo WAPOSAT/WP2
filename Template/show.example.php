@@ -109,7 +109,7 @@
   </script>
   <script type="text/javascript" src="show.example/print.datasensors.js"></script>
   <script type="text/javascript" src="show.example/create.framestations.js"></script>
-  <script type="text/javascript" src="index/maps.singleMark.js">
+  <script type="text/javascript" src="show.example/maps.singleMark.js">
   </script>
   <script type="text/javascript" src="index/print.datasensor.update.js"></script>
   

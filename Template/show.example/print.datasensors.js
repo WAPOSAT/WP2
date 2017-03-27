@@ -156,13 +156,19 @@ function print_datasensors() {
 
       var sensorChart = Highcharts.stockChart('container-'+v, OptionChart);
 
-      generalChart.push({id: v, data: Data, chart: sensorChart}); 
+      generalChart.push({id: v, data: Data, chart: sensorChart, lastId: data.Last.Id }); 
 
-      
+
+      // SCREEN 3
+      $("#parameter-teory-"+v).html(data.InfoParameter);
+    
 
       data = null;
     });
   });
+
+  // SCREEN 5
+  LoadMapMark (Station.Map);
 }
 
 $( window ).resize(function() {

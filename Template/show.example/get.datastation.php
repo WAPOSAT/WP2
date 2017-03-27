@@ -23,10 +23,10 @@ if($Block != 0){
 	$code_name = $Block["block_codename"];
 
 	$map_zoom  = 16;
-	$map_LatCenter = $Block["latitude"];
-	$map_LngCenter = $Block["longitude"];
-	$LatPoint = $Block["latitude"];
-	$LngPoint = $Block["longitude"];
+	$map_LatCenter = (float)$Block["latitude"];
+	$map_LngCenter = (float)$Block["longitude"];
+	$LatPoint = (float)$Block["latitude"];
+	$LngPoint = (float)$Block["longitude"];
 
 
 	$descripcion = $Block["description"];

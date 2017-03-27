@@ -63,6 +63,8 @@ function create_framestations() {
 	        <div class='col-md-12 text-center parameter-info'>\n\
 	        	<strong id='parameter-name-3-"+v+"' ></strong>=<strong id='last-sensor-value-3-"+v+"' ></strong> <button id='parameter-state-3-"+v+"' type='button' class='btn btn-success'></button>\n\
 	        </div>\n\
+	        <div id='parameter-teory-"+v+"' class='col-md-10 col-md-offset-1 col-xs-12'>\n\
+	        </div>\n\
         </div>";
 
 /*-------------------------------------------*/
