@@ -47,6 +47,119 @@ function print_datasensors() {
       // SCREEN 1
       $("#last-measure-date-"+v).html("Ultima medición: "+data.DateText);
 
+      // SCREEN 2
+      Data = [];
+      for (var a=0;a<data.Data.Value.length ;a++){
+
+        //Si data.Data.Date[a] se recibe como un texto del tipo '2016-03-11 11:00:00' usar lo siguiente
+        //var d = new Date(data.Data.Date[a]).getTime();
+        //Data.push([d, data.Data.Value[a]]);
+        
+        //Si data.Data.Date[a] se recibe como el valor Unix  se puede utilizar asi
+        Data.push([data.Data.Date[a], data.Data.Value[a]]);
+      }
+
+      // Estableciendo opciones para la visualizacion de la grafica con Limites Maximos permitidos
+      var OptionChart = {
+        /*
+        chart: {
+          type: 'spline',
+          events : {
+            load : function () {
+              setInterval(function () {
+                nextRange ();
+              }, 3000);
+            }
+          }
+        },
+        */
+        rangeSelector: {
+          selected: 1,
+          buttons: [{
+            type: 'minute',
+            count: 10,
+            text: '10m'},
+          {
+            type: 'hour',
+            count: 1,
+            text: '1h'},
+          {
+            type: 'hour',
+            count: 8,
+            text: '8h'},
+          {
+            type: 'all',
+            text: 'All'}],
+          //inputEnabled: false,
+        },
+
+        
+
+        title: {
+            text: data.Unit+" vs Tiempo"
+        },
+
+        yAxis: {
+            title: {
+                text: "Nivel de "+ data.SensorName
+            },
+            plotLines: [{
+                value: data.LMR,
+                color: '#ec971f', // orange
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Limite de Riesgo'
+                }
+            }, {
+                value: data.LMP,
+                color: '#c9302c', // red
+                dashStyle: 'shortdash',
+                width: 2,
+                label: {
+                    text: 'Limite de Peligro'
+                }
+            }]
+        },
+
+        credits: {
+            position: {
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+        },
+
+        //colors: ['#086165'],
+
+        series: [{
+            name: data.SensorName,
+            data: Data,
+            lineWidth: 3,
+            marker: { radius: 4 },
+            zones: [{
+              value: data.LMR,
+              // Color under data.LMR
+              color: '#086165'
+            }, {
+              value: data.LMP,
+              // Color under data.LMP
+              color: '#ec971f'
+            }, {
+              // Color over data.LMP
+              color: '#c9302c'
+            }],
+            tooltip: {
+                valueDecimals: 2
+            }
+        }]
+      };
+
+      var sensorChart = Highcharts.stockChart('container-'+v, OptionChart);
+
+      generalChart.push({id: v, data: Data, chart: sensorChart}); 
+
+      
+
       data = null;
     });
   });

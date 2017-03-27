@@ -46,9 +46,6 @@ function create_framestations() {
         <div id='last-sensor-value-1-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
         </div>\n\
         <div id='last-measure-date-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
-        <div class='col-md-offset-2 col-xs-12'>\n\
-		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' ></div>\n\
-		        </div>\n\
         </div>";
         
       // Generamos el contenedor de la vista 2
@@ -58,21 +55,14 @@ function create_framestations() {
 		        hola"+v+"\n\
 		        </div>\n\
 		      </div>\n\
-		      <div class='col-md-12 text-center' >\n\
-		        <div class='col-md-offset-2 col-xs-12'>\n\
-		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' >Hola</div>\n\
-		        </div>\n\
-	        </div>\n\
-        </div>";      
+	        	<div id='container-"+v+"' class='col-md-12' style='height: 300px;'></div>\n\
+        </div>";    
 
       // Generamos el contenedor de la vista 3
       s3_content+="<div id='screen-3-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
 	        <div class='col-md-12 text-center parameter-info'>\n\
 	        	<strong id='parameter-name-3-"+v+"' ></strong>=<strong id='last-sensor-value-3-"+v+"' ></strong> <button id='parameter-state-3-"+v+"' type='button' class='btn btn-success'></button>\n\
 	        </div>\n\
-	       <div class='col-md-offset-2 col-xs-12'>\n\
-		        	<div id='container-"+v+"' class='col-md-8' style='height: 50px' >Hola</div>\n\
-		        </div>\n\
         </div>";
 
 /*-------------------------------------------*/
