@@ -39,7 +39,7 @@
       
 
     <!--  Primera Vista -->
-      <div class="item active ">
+      <div class="item">
         <div id="screen-1" class="col-md-12" style="height: 340px; min-width: 310px">
           
         </div>
@@ -66,7 +66,7 @@
       <!-- Fin Tercera Vista -->
 
       <!--  Quinta Vista -->
-      <div class="item">
+      <div class="item active">
         <div id="screen-5" class="col-md-12" style="height: 340px; min-width: 310px">          
           <div id="map-slide" class="col-md-12" style="height: 400px " >
             

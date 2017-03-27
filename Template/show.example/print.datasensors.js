@@ -168,6 +168,8 @@ function print_datasensors() {
   });
 
   // SCREEN 5
+  // Se llama a los datos del mapa desde la variable Station, pues es un
+  // valor global del BlockStation
   LoadMapMark (Station.Map);
 }
 
