@@ -28,7 +28,7 @@
   </div>
 
   <!--   -->
-  <div id="myCarousel" class="col-md-5 carousel slide" >   <!-- data-ride="carousel"  -->
+  <div id="myCarousel" class="col-md-12 carousel slide" >   <!-- data-ride="carousel"  -->
     <ol class="carousel-indicators" >
       <li data-target="#myCarousel" style="background-color: #4DB4DE" data-slide-to="0" ></li>
       <li data-target="#myCarousel" style="background-color: #1D648E" data-slide-to="1" ></li>
