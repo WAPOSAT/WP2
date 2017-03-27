@@ -40,7 +40,7 @@
 
     <!--  Primera Vista -->
       <div class="item">
-        <div id="screen-1" class="col-md-12" style="height: 340px; min-width: 310px">
+        <div id="screen-1" class="col-md-12" style=" min-width: 310px">
           
         </div>
         <div  class="col-md-12" style="height: 50px; min-width: 310px"></div>
@@ -49,7 +49,7 @@
 
       <!--  Segunda Vista -->
       <div class="item">
-        <div id="screen-2" class="col-md-12" style="height: 340px; min-width: 310px">
+        <div id="screen-2" class="col-md-12" style="min-width: 310px">
           
         </div>
         <div class="col-md-12" style="height: 50px; min-width: 310px"></div>
@@ -58,7 +58,7 @@
 
       <!--  Tercera Vista -->
       <div class="item">
-        <div id="screen-3" class="col-md-12" style="height: 340px; min-width: 310px">
+        <div id="screen-3" class="col-md-12" style="min-width: 310px">
           
         </div>
         <div class="col-md-12" style="height: 50px; min-width: 310px"></div>
