@@ -11,7 +11,6 @@ $id = (float)$_GET["IdS"];
 //$id=2;
 
 $Block = $Blocks->getstation_byId($id);
-
 // verificamos que el Id enviado pertenesca a un Block_Station que este activo
 if($Block != 0){
 	$Sensores = array();
@@ -19,8 +18,8 @@ if($Block != 0){
 	Hasta este punto se ha verificado si la informacion enviada por GET es correcta
 	*/
 
-	$name = $Block["block_name"];
-	$code_name = $Block["block_codename"];
+	$name = utf8_encode($Block["block_name"]);
+	$code_name = utf8_encode($Block["block_codename"]);
 
 	$map_zoom  = 16;
 	$map_LatCenter = (float)$Block["latitude"];
@@ -29,7 +28,7 @@ if($Block != 0){
 	$LngPoint = (float)$Block["longitude"];
 
 
-	$descripcion = $Block["description"];
+	$descripcion = utf8_encode($Block["description"]);
 	$imagen = $Block["image"];
 	$Freq_Refresh = $Block["refresh"];
 
@@ -39,7 +38,6 @@ if($Block != 0){
     while($valores = $Block_Sensors->retornar_SELECT()){
     	array_push($Sensores, (float)$valores["id"]);
     }
-
 
 	$arr = array(
 		'Id'=> $id,

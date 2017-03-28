@@ -74,7 +74,7 @@ function print_datasensors() {
         },
         */
         rangeSelector: {
-          selected: 1,
+          selected: 3,
           buttons: [{
             type: 'minute',
             count: 10,
@@ -90,7 +90,7 @@ function print_datasensors() {
           {
             type: 'all',
             text: 'All'}],
-          //inputEnabled: false,
+          inputEnabled: false,
         },
 
         

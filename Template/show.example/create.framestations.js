@@ -49,13 +49,13 @@ function create_framestations() {
         </div>";
         
       // Generamos el contenedor de la vista 2
-      s2_content+="<div id='screen-2-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"'>\n\
+      s2_content+="<div id='screen-2-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"' style='height: 400px;' >\n\
 					<div class='col-md-12 text-center parameter-info'>\n\
 		        <div id='last-sensor-value-2-"+v+"' class='col-md-12 text-center'>\n\
 		        hola"+v+"\n\
 		        </div>\n\
 		      </div>\n\
-	        	<div id='container-"+v+"' class='col-md-12' style='height: 300px;'></div>\n\
+	        	<div id='container-"+v+"' style='height: 300px; weight: 100%'></div>\n\
         </div>";    
 
       // Generamos el contenedor de la vista 3
