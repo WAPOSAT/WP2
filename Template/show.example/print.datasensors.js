@@ -2,7 +2,7 @@
 var generalChart=[];
 
 // Variables para el ciclo de actualizacion
-var actualizarSensor=[];
+var actualizar=null;
 var Sensor = [];
 
 // Se crea como variable global para poder visualizarla en la consola
@@ -155,13 +155,14 @@ function print_datasensors() {
       };
 
       var sensorChart = Highcharts.stockChart('container-'+v, OptionChart);
-
-      generalChart.push({id: v, data: Data, chart: sensorChart, lastId: data.Last.Id }); 
-
-
+            
       // SCREEN 3
       $("#parameter-teory-"+v).html(data.InfoParameter);
-    
+
+
+      // se guarda la informacion actual en generalChart para que pueda ser
+      // utilizada en las actualizaciones de informacion
+      generalChart.push({id: v, data: Data, chart: sensorChart, reload: actualizar, lastId: data.Last.Id }); 
 
       data = null;
     });
@@ -171,6 +172,12 @@ function print_datasensors() {
   // Se llama a los datos del mapa desde la variable Station, pues es un
   // valor global del BlockStation
   LoadMapMark (Station.Map);
+
+  // Se llama a la funcion que actualizara permanentemente la informacion del monitoreo
+  clearInterval(actualizar);
+  //actualizar=setInterval('print_datasensors_update()', (Station.RefreshFrequencySeg*1000));
+  actualizar=setInterval('print_datasensors_update()', (10*1000));
+
 }
 
 $( window ).resize(function() {

@@ -1,6 +1,6 @@
-// Esta parte es activada desde print.datasensor.js
+// Esta parte es activada desde print.datasensors.js
 
-function DataSensorUpdate (id_bs){
+function dataSensorsUpdate (id_bs){
 	// Solicitando los ultimos datos del sensor
 	$.getJSON('show.example/get.datasensor.update.php?BS='+id_bs+'&last='+lastId, function (data) {
 
@@ -67,3 +67,4 @@ function DataSensorUpdate (id_bs){
 	});
 	data = null;
 }
+

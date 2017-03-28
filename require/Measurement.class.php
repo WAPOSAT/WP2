@@ -26,13 +26,20 @@ class Measurement {
         $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." ORDER BY id_measurement DESC ";
         $this->_conexion->ejecutar_sentencia($sql);
     }
-    
-    public function get_lastweek ($id_sensor){
-        $sql = "SELECT * FROM `Measurement` WHERE id_sensor=".$id_sensor." AND date >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY AND date < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY";
+
+    public function get_week ($id_sensor, $date){
+        // Se toman los 7 dias previos a la fecha ingresada
+        $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." AND date >= '".$date."' - INTERVAL DAYOFWEEK('".$date."')+6 DAY AND date <= '".$date."' ORDER BY id_measurement DESC ";
         $this->_conexion->ejecutar_sentencia($sql);
     }
 
+    public function get_lastweek ($id_sensor){
+        $last = $this->get_last($id_sensor);
+        $this->get_week($id_sensor, $last["date"]);
+    }
+
     public function get_24hours ($id_sensor, $date){
+        // Se un intervalo desde 24 horas antes de la fecha ingresada
         $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." AND date > DATE_SUB('".$date."', INTERVAL 1 DAY) ORDER BY id_measurement DESC ";
         $this->_conexion->ejecutar_sentencia($sql);
     }

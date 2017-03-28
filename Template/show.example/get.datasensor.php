@@ -33,7 +33,7 @@ if($Block != 0){
     // Se obtiene los datos adicionales
     $ValParameters = $Parameters->getParameter_bySensor ($Block["id_sensor"]);
     $ValBlock = $Blocks->getblock_byId($Block["id_block"]);
-    $Measurement->get_last24hours ($Block["id_sensor"]);
+    $Measurement->get_lastweek ($Block["id_sensor"]);
 
     // Se genera el array para la creacion de data
     $months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
