@@ -1,5 +1,6 @@
 // Objeto que contendran las graficas en array
 var generalChart=[];
+var cont=0;
 
 // Variables para el ciclo de actualizacion
 var actualizar=null;

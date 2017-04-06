@@ -1,6 +1,11 @@
 // Esta parte es activada desde print.datasensor.js
 
 function print_datasensors_update (){
+	//console.log("Cargando nueva data");
+	cont++;
+	if(cont==150){
+		location.reload();
+	}
 
 	$.each(generalChart, function(k, v) {
 		// Solicitando los ultimos datos del sensor
