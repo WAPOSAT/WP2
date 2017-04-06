@@ -3,7 +3,7 @@
 function print_datasensors_update (){
 	//console.log("Cargando nueva data");
 	cont++;
-	if(cont==150){
+	if(cont==100){
 		location.reload();
 	}
 
