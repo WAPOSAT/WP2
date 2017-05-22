@@ -27,6 +27,17 @@ class Measurement {
         $this->_conexion->ejecutar_sentencia($sql);
     }
 
+    public function get_month ($id_sensor, $date){
+        // Se toman los 7 dias previos a la fecha ingresada
+        $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." AND date >= '".$date."' - INTERVAL DAYOFWEEK('".$date."')+30 DAY AND date <= '".$date."' ORDER BY id_measurement DESC ";
+        $this->_conexion->ejecutar_sentencia($sql);
+    }
+
+    public function get_lastmonth ($id_sensor){
+        $last = $this->get_last($id_sensor);
+        $this->get_month($id_sensor, $last["date"]);
+    }
+
     public function get_week ($id_sensor, $date){
         // Se toman los 7 dias previos a la fecha ingresada
         $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." AND date >= '".$date."' - INTERVAL DAYOFWEEK('".$date."')+6 DAY AND date <= '".$date."' ORDER BY id_measurement DESC ";
