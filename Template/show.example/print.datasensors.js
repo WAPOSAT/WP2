@@ -12,13 +12,17 @@ var slides = 5;
 var responsive = 0;
 // variable para controlar generalChart rangeSelector
 var rangeSelector = 0;
+var time =0;
+if(Station.Id == 28){
+  time = 1;
+}
 
 
 function print_datasensors() {
   //analyse_width();
   $.each(Station.sensores, function(k, v) {
 
-    $.getJSON('show.example/get.datasensor.php?BS='+v, function (data) {
+    $.getJSON('show.example/get.datasensor.php?BS='+v+'&time='+time, function (data) {
       
       // Analisando la informacion obtenida
       var state="btn btn-success btn-lg";

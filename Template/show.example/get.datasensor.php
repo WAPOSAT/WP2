@@ -18,6 +18,7 @@ $Blocks = new Blocks();
 $decimal = 2;
 
 $id = (float)$_GET["BS"];
+$time = (float)$_GET["time"];
 //$id = 2;
 
 //$time = $_GET["time_type"];
@@ -33,7 +34,7 @@ if($Block != 0){
     // Se obtiene los datos adicionales
     $ValParameters = $Parameters->getParameter_bySensor ($Block["id_sensor"]);
     $ValBlock = $Blocks->getblock_byId($Block["id_block"]);
-    if($id == 28){
+    if($time == 1){
         $Measurement->get_lastmonth ($Block["id_sensor"]);
     } else {
         $Measurement->get_lastweek ($Block["id_sensor"]);    
