@@ -13,12 +13,13 @@ var responsive = 0;
 // variable para controlar generalChart rangeSelector
 var rangeSelector = 0;
 var time =0;
-if(Station.Id == 28){
-  time = 1;
-}
+
 
 
 function print_datasensors() {
+  if(Station.Id == 28){
+    time = 1;
+  }
   //analyse_width();
   $.each(Station.sensores, function(k, v) {
 
