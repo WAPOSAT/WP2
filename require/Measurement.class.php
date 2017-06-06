@@ -3,11 +3,11 @@
 
 class Measurement {
     private $_conexion;
-    
+
     public function __construct(){
         $this->_conexion = new conexion();
     }
-    
+
     public function get_day ($id_sensor,$date){
         $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." AND date BETWEEN '".$date." 00:00:00' AND '".$date." 23:59:59' ORDER BY id_measurement DESC ";
     }
@@ -25,17 +25,6 @@ class Measurement {
     public function get_all ($id_sensor){
         $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." ORDER BY id_measurement DESC ";
         $this->_conexion->ejecutar_sentencia($sql);
-    }
-
-    public function get_month ($id_sensor, $date){
-        // Se toman los 7 dias previos a la fecha ingresada
-        $sql = "SELECT * FROM measurement WHERE id_sensor=".$id_sensor." AND date >= '".$date."' - INTERVAL DAYOFWEEK('".$date."')+30 DAY AND date <= '".$date."' ORDER BY id_measurement DESC ";
-        $this->_conexion->ejecutar_sentencia($sql);
-    }
-
-    public function get_lastmonth ($id_sensor){
-        $last = $this->get_last($id_sensor);
-        $this->get_month($id_sensor, $last["date"]);
     }
 
     public function get_week ($id_sensor, $date){
@@ -57,7 +46,7 @@ class Measurement {
 
     public function get_last24hours ($id_sensor){
         $last = $this->get_last($id_sensor);
-        $this->get_24hours($id_sensor, $last["date"]);    
+        $this->get_24hours($id_sensor, $last["date"]);
     }
 
     public function get_sinceId ($id_sensor, $id_measurement){
@@ -66,8 +55,12 @@ class Measurement {
     }
 
     public function retornar_SELECT(){
-		return $this->_conexion->retornar_array();
-	}
+		    return $this->_conexion->retornar_array();
+	  }
+    public function set_sensor_medida($id_sensor, $value){
+      $sql = "INSERT INTO measurement (`id_measurement`,`id_sensor` ,`date` ,`value`) VALUES (NULL ,  ".$id_sensor.", CURRENT_TIMESTAMP ,  ".$value.")";
+      $this->_conexion->ejecutar_sentencia($sql);
+    }
 }
 
 ?>
