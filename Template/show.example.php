@@ -82,10 +82,10 @@
     </div>
 
     <!-- Botones laterales -->      
-    <a class="left carousel-control" href="#" onclick="$('#myCarousel').carousel('prev')">
+    <a class="left carousel-control" onclick="$('#myCarousel').carousel('prev')">
       <span class="icon-prev"></span>
     </a>
-    <a class="right carousel-control" href="#" onclick="$('#myCarousel').carousel('next')">
+    <a class="right carousel-control" onclick="$('#myCarousel').carousel('next')">
       <span class="icon-next"></span>
     </a>
     <!-- Fin de Botones laterales -->

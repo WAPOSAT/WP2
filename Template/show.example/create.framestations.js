@@ -43,7 +43,7 @@ function create_framestations() {
       	<div class='col-md-12 text-center parameter-info'>\n\
       	<strong id='parameter-name-1-"+v+"' ></strong><button id='parameter-state-1-"+v+"' type='button' class='btn btn-success'></button>\n\
         </div>\n\
-        <div id='last-sensor-value-1-"+v+"' class='col-md-12 text-center last-sensor-value-1'>2.45 NTU\n\
+        <div id='last-sensor-value-1-"+v+"' class='col-md-12 text-center last-sensor-value-1'>\n\
         </div>\n\
         <div id='last-measure-date-"+v+"' class='col-md-12 text-center last-measure-date' >Ultima medicion asdfadf</div>\n\
         </div>";
@@ -52,7 +52,6 @@ function create_framestations() {
       s2_content+="<div id='screen-2-"+v+"' class='col-md-"+col+" col-sm-"+col+" col-lg-"+col+"col-xs-"+col+"' style='height: 400px;' >\n\
 					<div class='col-md-12 text-center parameter-info'>\n\
 		        <div id='last-sensor-value-2-"+v+"' class='col-md-12 text-center'>\n\
-		        hola"+v+"\n\
 		        </div>\n\
 		      </div>\n\
 	        	<div id='container-"+v+"' style='height: 300px; weight: 100%'></div>\n\

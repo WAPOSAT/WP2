@@ -16,7 +16,7 @@
                     </li>
                 </ul>
                 <hr class="small">
-                <p class="text-muted">Copyright &copy; Waposat 2016</p>
+                <p class="text-muted">Copyright &copy; Waposat 2017</p>
             </div>
         </div>
     </div>
