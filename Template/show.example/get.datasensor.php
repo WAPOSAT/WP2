@@ -121,8 +121,8 @@ if($Block != 0){
     $map_LatCenter = -12.01109;
     $map_LngCenter = -77.050624;
     */
-    $DataValue = abs($DataValue);
-    $lastVal = abs($lastVal);
+    //$DataValue = abs($DataValue);
+    //$lastVal = abs($lastVal);
 
     $arr = array(
         'IdBlockSensor'=> $id,
