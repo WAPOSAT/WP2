@@ -55,15 +55,17 @@ if($Block != 0){
         $dateval = $datetmp->getTimestamp()."000";
 
         $valuetmp = (float)$valores["value"];
+        $valuetmp = abs($valuetmp);
 
         array_push($DataTime, (float)$dateval);
         array_push($DataValue, round($valuetmp, $decimal));
         
-        array_push($Data, [$valores["date"] , (float)$valores["valor"]] );
+        //array_push($Data, [$valores["date"] , (float)$valores["valor"]] );
         
         if($lastID < $valores["id_measurement"]){
             $lastID = (float)$valores["id_measurement"];
             $lastVal = (float)$valores["value"];
+            $lastVal = abs($lastVal);
             $lastVal = round($lastVal,$decimal);
             $lastdate = $valores["date"];
         }

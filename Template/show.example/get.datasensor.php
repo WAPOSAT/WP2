@@ -7,7 +7,7 @@ require_once ("../../require/Blocks.class.php");
 
 $DataTime = array();
 $DataValue = array();
-$Data = array();
+
 $lastID = 0;
 $long = 0;
 
@@ -18,7 +18,6 @@ $Blocks = new Blocks();
 $decimal = 2;
 
 $id = (float)$_GET["BS"];
-$time = (float)$_GET["time"];
 //$id = 2;
 
 //$time = $_GET["time_type"];
@@ -34,12 +33,7 @@ if($Block != 0){
     // Se obtiene los datos adicionales
     $ValParameters = $Parameters->getParameter_bySensor ($Block["id_sensor"]);
     $ValBlock = $Blocks->getblock_byId($Block["id_block"]);
-    if($time == 1){
-        $Measurement->get_lastmonth ($Block["id_sensor"]);
-    } else {
-        $Measurement->get_lastweek ($Block["id_sensor"]);    
-    }
-    
+    $Measurement->get_lastweek ($Block["id_sensor"]);
 
     // Se genera el array para la creacion de data
     $months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
@@ -71,16 +65,17 @@ if($Block != 0){
         $dateval = $datetmp->getTimestamp()."000";
 
         $valuetmp = (float)$valores["value"];
+        $valuetmp = abs($valuetmp);
 
         array_push($DataTime, (float)$dateval);
         array_push($DataValue, round($valuetmp, $decimal));
         
-        array_push($Data, [$valores["date"] , (float)$valores["valor"]] );
         
         $AcumVal = $AcumVal+$valores["value"];
         if($lastID < $valores["id_measurement"]){
             $lastID = (float)$valores["id_measurement"];
             $lastVal = (float)$valores["value"];
+            $lastVal = abs($lastVal);
             $lastVal = round($lastVal,$decimal);
             $lastdate = $valores["date"];
         }
@@ -99,7 +94,6 @@ if($Block != 0){
 
     $DataTime = array_reverse($DataTime);
     $DataValue = array_reverse($DataValue);
-    $Data = array_reverse($Data);
 
     $info_parameter = utf8_encode($ValParameters["referencia"]);
     //$info_parameter = utf8_encode("hola<div>hola 2</div>");
@@ -127,6 +121,8 @@ if($Block != 0){
     $map_LatCenter = -12.01109;
     $map_LngCenter = -77.050624;
     */
+    $DataValue = abs($DataValue);
+    $lastVal = abs($lastVal);
 
     $arr = array(
         'IdBlockSensor'=> $id,
